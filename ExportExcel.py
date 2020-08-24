@@ -1,5 +1,6 @@
 import os
 import re
+
 class dtsxReader:
     basepath = 'D:\Proj_Excel\SSIS'
     fileList = []
@@ -11,8 +12,6 @@ class dtsxReader:
         # Read data in file
         self.readDTSXFile()
         
-        # Find data in file
-        self.findDTSXFile()
 
     def listFilePath(self):
         for entry in os.listdir(self.basepath):
@@ -25,10 +24,7 @@ class dtsxReader:
                 data = f.read()
                 print(data)
                 
-    def findDTSXFile(self):
-        txt = "SendMailTask:From"
-        x = re.findall("SendMailTask:From",txt)
-        print(x)
+        
 
 # Run!
 dtsxReader()
